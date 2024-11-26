@@ -202,13 +202,27 @@ function addToShoppingList() {
         alert('Please enter an item before adding.');
         return;
     }
-    //create a new row and cell for the item
+
+    //create a new row
     const row = document.createElement('tr');
-    const cell = document.createElement('td');
-    cell.textContent = itemName; //add item name to the cell
-    row.appendChild(cell); //add the cell to the row
-    shoppingListTable.appendChild(row); //add the row to the table
-    input.value = ''; //clear the input field
+
+    //create a cell for the checkbox
+    const checkboxCell = document.createElement('td');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox'; //add a checkbox
+    checkboxCell.appendChild(checkbox);
+    row.appendChild(checkboxCell);
+
+    //create a cell for the item name
+    const itemCell = document.createElement('td');
+    itemCell.textContent = itemName; //add the item name
+    row.appendChild(itemCell);
+
+    //add the new row to the shopping list table
+    shoppingListTable.appendChild(row);
+
+    //clear the input field
+    input.value = '';
 }
 
 //clearing shopping list
@@ -218,3 +232,11 @@ function clearShoppingList() {
         shoppingListTable.deleteRow(1); //remove all rows except the header
     }
 }
+
+//event listener that lets user add item to shopping list by pressing enter key after inputting it
+document.getElementById('shopping-item-input').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') { //check if the enter key is pressed
+        event.preventDefault(); //prevent the default form submission behavior
+        addToShoppingList(); //calls the addToShoppingList function
+    }
+});

@@ -1,3 +1,5 @@
+//dark mode toggle script
+
 const darkMode = document.getElementById('drk-toggle');
 
 darkMode.addEventListener('click', function () {

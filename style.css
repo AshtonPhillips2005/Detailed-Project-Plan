@@ -130,15 +130,20 @@ table, td {
 
 .dark-theme {
   color: #ffffff;
-  background: #393939;
+  background: #666666;
 }
 
 .dark-theme .header2 {
-  background-color: rgb(76, 76, 76);
-  color: rgb(49, 180, 88);
+  background-image: url(https://wallpapers.com/images/hd/vegetables-and-beans-wallpaper-hd-whyd4oo3x83r47mg.jpg);
+}
+ 
+.dark-theme .h {
+  color: white;
 }
 
-
+.dark-theme .darkbtn {
+  color: white;
+}
 .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .grid-img {
     background-color: rgba(192, 255, 162, 0.527);
     padding: 20px;

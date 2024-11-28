@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrition Helper</title>
 </head>
+
 <body>
     <header><h3>Nutrition Helper.</h3></header>
     <header class="header2"><h2><ul><li><a href="#intro">Introduction</a></li> <li><a href="#shoplist">Shopping list</a></li><li><a href="planner.html">Weekly Planner</a></li><li><button id="drk-toggle" class="darkbtn">Dark mode</button></li></ul></h2></header>
@@ -23,15 +24,58 @@
 </div>
 <table>
 <tr><th>
-
     <section id="recipes">
         <h2>Recipe Search</h2>
+
+        <!--search bar with filter dropdown-->
+        <section id="search-bar">
+            <input type="text" id="recipe-search" placeholder="Search for recipes..." oninput="searchRecipes()">
+            <select id="diet-type">
+                <option value="">Filters</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="keto">Keto</option>
+            </select>
+        </section>
+
+        <div id="suggestions" class="suggestion-box"></div>
         <br>
-        <br>
-</section></th>
+
+        <!--recipe list section-->
+        <section id="recipe-list">
+            <h3>Recipe List</h3>
+            <table id="recipe-table">
+                <tr>
+                    <th>Recipe Name</th>
+                    <th>Ingredients</th>
+                    <th>Instructions</th>
+                    <th>Nutrition</th>
+                </tr>
+            </table>
+
+            <!--clear button-->
+            <button id="clear-recipe-list" onclick="clearRecipeList()">Clear Recipe List</button>
+        </section>
+    </section>
+</th>
 <th>
-    <section id="shoplist">
-        <h2>Shopping List</h2>
+    <section id="shopping-list">
+        <h3>Shopping List</h3>
+        <table id="shopping-list-items">
+            <tr>
+                <th>Done</th> <!--column for the checkboxes-->
+                <th>Ingredient</th>
+            </tr>
+
+            <!--items will be dynamically added here-->
+        </table>
+        <div class="shopping-controls">
+            <input type="text" id="shopping-item-input" placeholder="Add item..." />
+            <button onclick="addToShoppingList()">Add to List</button>
+            <button onclick="clearShoppingList()">Clear Shopping List</button>
+        </div>
+    </section>
         <br><br>
     </section>
 </tr></th>
@@ -41,6 +85,9 @@
 <br><br>
 <img class="avocado" src="https://images.squarespace-cdn.com/content/v1/5661b263e4b0830bdc162128/1531234150802-7M3VMHK28W1T2DF5POZN/5901c94f2600001700c47fbc.jpeg">
 <br><br>
+
 <footer>Site created and maintained by Navjot, Sophie & Ashton 2024&copy; All Rights Reserved.</footer>    
+
+<script src="script.js"></script>
 </body>
 </html>

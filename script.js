@@ -2,15 +2,28 @@
 
 const darkMode = document.getElementById('drk-toggle');
 
+// Check local storage for saved dark mode preference
+if (localStorage.getItem('isDarkMode') === 'true') {
+    document.body.classList.add('dark-theme');
+    darkMode.textContent = 'Light mode';
+} else {
+    document.body.classList.remove('dark-theme');
+    darkMode.textContent = 'Dark mode';
+}
+
 darkMode.addEventListener('click', function () {
+    // Toggle dark mode
     document.body.classList.toggle('dark-theme');
+
+    // Save theme preference to local storage
     if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('isDarkMode', 'true');
         darkMode.textContent = 'Light mode';
     } else {
+        localStorage.setItem('isDarkMode', 'false');
         darkMode.textContent = 'Dark mode';
     }
 });
-
 //keys to access recipe api (for recipes) and edamam nutrition api for nutritional info
 const API_KEY = 'k3leQtmeOp2QMg0ueEpTUw==cqYetIwrfqzseikQ'; //recipe api key
 const EDAMAM_APP_ID = '9efca270';   //edamam api app ID

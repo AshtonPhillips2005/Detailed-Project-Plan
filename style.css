@@ -127,6 +127,18 @@ table, td {
   color: white;
   cursor: crosshair;
 }
+
+.dark-theme {
+  color: #ffffff;
+  background: #393939;
+}
+
+.dark-theme .header2 {
+  background-color: rgb(76, 76, 76);
+  color: rgb(49, 180, 88);
+}
+
+
 .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .grid-img {
     background-color: rgba(192, 255, 162, 0.527);
     padding: 20px;

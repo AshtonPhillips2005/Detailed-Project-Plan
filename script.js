@@ -1,3 +1,14 @@
+const darkMode = document.getElementById('drk-toggle');
+
+darkMode.addEventListener('click', function () {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+        darkMode.textContent = 'Light mode';
+    } else {
+        darkMode.textContent = 'Dark mode';
+    }
+});
+
 //keys to access recipe api (for recipes) and edamam nutrition api for nutritional info
 const API_KEY = 'k3leQtmeOp2QMg0ueEpTUw==cqYetIwrfqzseikQ'; //recipe api key
 const EDAMAM_APP_ID = '9efca270';   //edamam api app ID

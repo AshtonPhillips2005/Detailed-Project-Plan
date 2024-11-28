@@ -115,6 +115,18 @@ table, td {
     padding-right: 110px;
 
 }
+.darkbtn {
+  background: none;
+  font-size: 20px;
+  font-family: Georgia;
+  border: none;
+  font-style: oblique;
+}
+.darkbtn:hover {
+  background-color: black;
+  color: white;
+  cursor: crosshair;
+}
 .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .grid-img {
     background-color: rgba(192, 255, 162, 0.527);
     padding: 20px;

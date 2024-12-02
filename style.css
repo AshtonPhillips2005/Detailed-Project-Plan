@@ -130,7 +130,7 @@ table, td {
 
 .dark-theme {
   color: #ffffff;
-  background: #666666;
+  background: #4e4e4e;
 }
 
 .dark-theme .header2 {
@@ -175,7 +175,7 @@ footer {
   max-width: 800px;
   }
   .dark-theme #recipes {
-    background-color: #666666;
+    background-color: #4e4e4e;;
     color: white;
   }
 
@@ -199,10 +199,10 @@ footer {
   }
   .dark-theme  #recipe-list {
    
-    background-color: #666666;
+    background-color: #4e4e4e;
     }
     .dark-theme #shopping-list {
-      background-color: #666666;
+      background-color: #4e4e4e;
     }
   /*headers*/
   #recipe-list h3, #shopping-list h3 {
@@ -229,10 +229,10 @@ footer {
   background-color: #f4f4f4;
   }
 .dark-theme #recipe-table th {
-  background-color: #666666;
+  background-color: #4e4e4e;
 }
 .dark-theme #shopping-list-items th {
-  background-color: #666666;
+  background-color: #4e4e4e;
 }
 
   #clear-recipe-list {
@@ -319,7 +319,7 @@ footer {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
   .dark-theme .suggestion-box {
-    background-color: #666666;
+    background-color: #4e4e4e;
   }
 
   .suggestion-item {
@@ -330,3 +330,8 @@ footer {
   .suggestion-item:hover {
   background-color: #f0f0f0;
   }
+
+  
+@media only screen and (max-width: 600px) {
+
+}

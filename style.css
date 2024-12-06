@@ -45,6 +45,7 @@ header {
     top: 0%;
     padding: 0px;
     text-align: left;
+    z-index: 10;
     
 }
 .header2 {
@@ -56,6 +57,7 @@ header {
     top: 8%;
     padding: 0px;
     text-align: left;
+    z-index: 10;
 
 }
 
@@ -374,6 +376,16 @@ footer {
   margin: 20px;
 }
 
+
+.flexbox-section {
+  display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 1;
+}
+
+
 #recipe-list-planner {
   margin: 0;
   padding: 20px;
@@ -382,6 +394,10 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto; 
   height: auto;
+}
+.dark-theme #recipe-list-planner {
+  background-color: #8d8d8d;
+  color: black;
 }
 
 .grid-container {

@@ -83,10 +83,10 @@ async function searchRecipes() {
 function isRecipeSuitableForDiet(recipe, dietType) {
     //forbidden ingredients for each diet type
     const forbidden = {
-        vegetarian: ['chicken', 'beef', 'pork', 'fish', 'lamb', 'shrimp', 'turkey'],
-        vegan: ['milk', 'cheese', 'butter', 'eggs', 'honey'],
+        vegetarian: ['chicken', 'beef', 'pork', 'fish', 'lamb', 'shrimp', 'turkey', 'veal', 'goat'],
+        vegan: ['milk', 'cheese', 'butter', 'eggs', 'honey', 'chicken', 'beef', 'pork', 'fish', 'lamb', 'shrimp', 'turkey', 'veal', 'goat'],
         'gluten-free': ['wheat', 'barley', 'rye', 'oats'],
-        keto: ['sugar', 'bread', 'pasta', 'rice', 'potato']
+        keto: ['sugar', 'bread', 'pasta', 'rice', 'potato','wheat', 'barley', 'rye', 'oats', 'banana', 'strawberry', 'honey', 'syrup', 'agave', 'corn']
     };
 
     const ingredients = Array.isArray(recipe.ingredients) 

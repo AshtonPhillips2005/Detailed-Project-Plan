@@ -5,6 +5,7 @@
     <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
     <title>Weekly Planner</title>
 </head>
 <body>
@@ -30,16 +31,119 @@
         <h1>Weekly Planner</h1>
         <br>
         <div class="grid-container">
-            <div class="monday" id="monday"><h1>Monday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2></div>
-            <div class="tuesday" id="tuesday"><h1>Tuesday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2>
+            <div class="monday" id="monday">
+                <h1>Monday</h1>
+                <div class="meal-slot" id="monday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="monday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="monday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
             </div>
-            <div class="wednesday" id="wednesday"><h1>Wednesday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2>
+        
+            <div class="tuesday" id="tuesday">
+                <h1>Tuesday</h1>
+                <div class="meal-slot" id="tuesday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="tuesday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="tuesday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
             </div>
-            <div class="thursday" id="thursday"><h1>Thursday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2></div>
-            <div class="friday" id="friday"><h1>Friday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2>
+        
+            <div class="wednesday" id="wednesday">
+                <h1>Wednesday</h1>
+                <div class="meal-slot" id="wednesday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="wednesday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="wednesday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
             </div>
-            <div class="saturday" id="saturday"><h1>Saturday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2></div>
-            <div class="sunday" id="sunday"><h1>Sunday</h1><h2><br><br>Breakfast<br><br>Lunch<br><br>Dinner</h2></div>
+        
+            <div class="thursday" id="thursday">
+                <h1>Thursday</h1>
+                <div class="meal-slot" id="thursday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="thursday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="thursday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+            </div>
+        
+            <div class="friday" id="friday">
+                <h1>Friday</h1>
+                <div class="meal-slot" id="friday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="friday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="friday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+            </div>
+        
+            <div class="saturday" id="saturday">
+                <h1>Saturday</h1>
+                <div class="meal-slot" id="saturday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="saturday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="saturday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+            </div>
+        
+            <div class="sunday" id="sunday">
+                <h1>Sunday</h1>
+                <div class="meal-slot" id="sunday-breakfast">
+                    <h2>Breakfast</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="sunday-lunch">
+                    <h2>Lunch</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+                <div class="meal-slot" id="sunday-dinner">
+                    <h2>Dinner</h2>
+                    <ul class="meal-list"></ul>
+                </div>
+            </div>
+        </div>
+            </div>
             <div class="grid-img"><img src="https://static.wixstatic.com/media/e54b46_fa72d6bf2ca8432ea6bd3fc9ee4afee7~mv2.jpg/v1/fill/w_256,h_256,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e54b46_fa72d6bf2ca8432ea6bd3fc9ee4afee7~mv2.jpg"></div>
 
         </div>

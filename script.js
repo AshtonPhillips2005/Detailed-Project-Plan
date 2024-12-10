@@ -313,11 +313,91 @@ window.addEventListener('storage', (event) => {
 
 //function to delete a recipe in recipe list on weekly planner page
 function deleteRecipe(index) {
+    //delete from saved recipes
     const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    const deletedRecipe = savedRecipes[index]?.name;
     savedRecipes.splice(index, 1);
     localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+
+    //update meal plan to remove the deleted recipe
+    const mealPlan = JSON.parse(localStorage.getItem('mealPlan')) || {};
+    Object.keys(mealPlan).forEach((mealId) => {
+        //filter out the deleted recipe
+        mealPlan[mealId] = mealPlan[mealId].filter(recipeName => recipeName !== deletedRecipe);
+    });
+    localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+
+    //reload the planner and meal slots
     loadPlannerRecipes();
+    loadMealPlan();
+
+    console.log(`Recipe deleted: ${deletedRecipe}`);
 }
+
+//adding drag and drop using Sortable.js
+//make the saved recipes draggable
+const savedRecipesList = document.querySelector('#planner-recipe-table');
+if (savedRecipesList) {
+    new Sortable(savedRecipesList, {
+        group: 'recipes', 
+        animation: 150, 
+        ghostClass: 'sortable-ghost',
+        onEnd: (evt) => {
+            console.log('Recipe dragged:', evt.item.textContent); //debugging log recipe name when dragging ends
+        }
+    });
+}
+
+//select all the meal slots where recipes can be dropped
+const mealSlots = document.querySelectorAll('.meal-slot .meal-list');
+
+//loop through each meal slot and make it a drop zone
+mealSlots.forEach(mealList => {
+    new Sortable(mealList, {
+        group: 'recipes',
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        onAdd: (evt) => {
+            const draggedItem = evt.item;
+            console.log(`Recipe added to ${mealList.id}:`, draggedItem.textContent);    //debugging
+
+            //save changes to localStorage
+            saveMealPlan();
+        }
+    });
+});
+
+//save the current meal plan to localStorage
+function saveMealPlan() {
+    const mealPlan = {};
+
+    //loop through all meal slots
+    mealSlots.forEach(mealList => {
+        const mealId = mealList.id;
+        const recipes = Array.from(mealList.children).map(item => item.textContent.trim());
+        mealPlan[mealId] = recipes; //save recipes to the meal plan
+    });
+    //save meal object to localStorage as a string
+    localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+    console.log('Meal plan saved:', mealPlan);
+}
+
+//load the meal plan from localStorage
+function loadMealPlan() {
+    const savedMealPlan = JSON.parse(localStorage.getItem('mealPlan')) || {};
+
+    //loop through all meal slots
+    mealSlots.forEach(mealList => {
+        const mealId = mealList.id;
+        const recipes = savedMealPlan[mealId] || [];
+
+        //display the recipe in the meal slot
+        mealList.innerHTML = recipes.map(recipe => `<li>${recipe}</li>`).join('');
+    });
+}
+
+//load meal plan when the page is ready
+document.addEventListener('DOMContentLoaded', loadMealPlan);
 
 //call function when the planner page loads
 if (document.getElementById('planner-recipe-table')) {

@@ -70,6 +70,8 @@ header {
     border-style: solid;
     border-width: 2px;
     border-color: black;
+    height: 250px;
+    width: 300px;
 }
 
 

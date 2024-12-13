@@ -26,6 +26,7 @@ darkMode.addEventListener('click', function () {
         darkMode.textContent = 'Dark mode';
     }
 });
+
 //keys to access recipe api (for recipes) and edamam nutrition api for nutritional info
 const API_KEY = 'k3leQtmeOp2QMg0ueEpTUw==cqYetIwrfqzseikQ'; //recipe api key
 const EDAMAM_APP_ID = '9efca270';   //edamam api app ID
@@ -404,36 +405,45 @@ if (document.getElementById('planner-recipe-table')) {
     loadPlannerRecipes();
 }
 
-//event listener that lets user add item to shopping list by pressing enter key after inputting it
-document.getElementById('shopping-item-input').addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') { //check if the enter key is pressed
-        event.preventDefault(); //prevent the default form submission behavior
-        addToShoppingList(); //calls the addToShoppingList function
-    }
-});
+//get shopping item input element
+const shoppingInput = document.getElementById('shopping-item-input');
 
-//select the back to top button
-document.addEventListener("DOMContentLoaded", () => {
-    const backToTopButton = document.getElementById("back-to-top");
+//check if element exists on the page
+if (shoppingInput) {
+    //event listener to detect when enter key is pressed
+    shoppingInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); //prevent the default form submission behavior
+            addToShoppingList(); //calls the addToShoppingList function
+        }
+    });
+} else {
+    console.warn("Shopping item input not found on this page.");    //debugging 
+}
 
-    if (backToTopButton) {
-        //show or hide the button when scrolling
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add("show");
-            } else {
-                backToTopButton.classList.remove("show");
-            }
+//get back to top button element
+const backToTopButton = document.getElementById('back-to-top');
+
+//checks if back to top button exists
+if (backToTopButton) {
+    console.log("Back-to-Top button detected.");
+
+    //show or hide the button when scrolling
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    });
+
+    //scroll to the top when the button is clicked
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
         });
-
-        //scroll to the top when the button is clicked
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-        });
-    } else {
-        console.warn("Back to Top button not found on this page.");
-    }
-});
+    });
+} else {
+    console.error("Back-to-Top button not found.");     //debugging
+}

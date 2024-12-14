@@ -353,6 +353,7 @@ if (savedRecipesList) {
 const mealSlots = document.querySelectorAll('.meal-slot .meal-list');
 
 //loop through each meal slot and make it a drop zone
+//modify how recipes are added to meal slots
 mealSlots.forEach(mealList => {
     new Sortable(mealList, {
         group: 'recipes',
@@ -360,12 +361,43 @@ mealSlots.forEach(mealList => {
         ghostClass: 'sortable-ghost',
         onAdd: (evt) => {
             const draggedItem = evt.item;
-            console.log(`Recipe added to ${mealList.id}:`, draggedItem.textContent);    //debugging
+            
+            //remove any delete buttons from the dragged item
+            const deleteButton = draggedItem.querySelector('.delete-btn');
+            if (deleteButton) deleteButton.remove();
+
+            draggedItem.innerHTML = draggedItem.textContent.trim();
+
+            console.log(`Recipe added to ${mealList.id}:`, draggedItem.textContent); //debugging
 
             //save changes to localStorage
             saveMealPlan();
         }
     });
+});
+
+//adding a clear planner button
+document.addEventListener('DOMContentLoaded', () => {
+    //get the clear planner button
+    const clearPlannerButton = document.getElementById('clear-planner');
+
+    if (clearPlannerButton) {
+        //add event listener to clear the planner
+        clearPlannerButton.addEventListener('click', () => {
+            //clear all meal slots
+            const mealSlots = document.querySelectorAll('.meal-slot .meal-list');
+            mealSlots.forEach(mealList => {
+                mealList.innerHTML = ''; //remove all recipes from the meal slot
+            });
+
+            //clear the meal plan from localStorage
+            localStorage.removeItem('mealPlan');
+
+            console.log('Planner cleared successfully!');
+        });
+    } else {
+        console.error('Clear Planner button not found.');
+    }
 });
 
 //save the current meal plan to localStorage
@@ -392,8 +424,8 @@ function loadMealPlan() {
         const mealId = mealList.id;
         const recipes = savedMealPlan[mealId] || [];
 
-        //display the recipe in the meal slot
-        mealList.innerHTML = recipes.map(recipe => `<li>${recipe}</li>`).join('');
+        //display only the recipe name in the meal slot
+        mealList.innerHTML = recipes.map(recipe => `<li class="simple-recipe">${recipe}</li>`).join('');
     });
 }
 

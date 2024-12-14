@@ -474,7 +474,12 @@ footer {
   .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday {
     width: 40%;
   }
-  header {
-    height: 13%;
+  .header2 {
+    height: 15%;
   }
+  #recipe-table, #shopping-list-items {
+    width: 50%;
+    }
+  
+    
 }

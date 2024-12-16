@@ -14,6 +14,9 @@ People who helped make this:
 - Ashton Phillips: Documentation Specialist
 
 link to issues tab: https://github.com/AshtonPhillips2005/Detailed-Project-Plan/issues
+
 link to project board: https://github.com/users/AshtonPhillips2005/projects/1
+
 link to our first Progress report: https://docs.google.com/document/d/1NYNBp--yfxvDK3rn2MqnwigHkoLNbBptpGHo0_wiTo8/edit?tab=t.0#heading=h.yd4upzh1zuby
+
 Link to the second and last progress report: https://docs.google.com/document/d/1HpzBCKykzBSnkOzWdw-tzDExE5rcHQ4SOB7rETpNkaQ/edit?tab=t.0#heading=h.r41lsfj0anc0

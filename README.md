@@ -1,11 +1,14 @@
 [![Watch the video](https://img.youtube.com/vi/epWqf1edonY/0.jpg)](https://www.youtube.com/watch?v=epWqf1edonY)
 
+Introduction:
 Welcome to your personal nutrition guide!
-On this site, you will find everything you need to jump-start your health and nutrition needs. 
+On this site, you will find everything you need to jump-start your health and nutrition needs.
 
+What is the purpose of the website:
 This site helps people who don't know what to eat or what is healthy for them to eat and it lets them make their meal plans for a whole week so that they know what they want to make and eat at that time of day.
 We are running this project with JavaScript, CSS, and HTML code.
 
+How to use the website:
 First, for using this project scroll down to the recipe search search for something you are interested in eating, and click on it. secondly, you want to then make a list of stuff that you need for the recipe, and once you do that you can go and  save it and drag and drop the recipe onto your weekly planner.
 
 People who helped make this:

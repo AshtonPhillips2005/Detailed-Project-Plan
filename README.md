@@ -1,4 +1,4 @@
-[![Watch the video](https://img.youtube.com/vi/https://youtu.be/epWqf1edonY/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/epWqf1edonY)
+[![Watch the video](https://img.youtube.com/vi/epWqf1edonY/0.jpg)](https://www.youtube.com/watch?v=epWqf1edonY)
 
 Welcome to your personal nutrition guide!
 On this site, you will find everything you need to jump-start your health and nutrition needs. 
